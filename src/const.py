@@ -5,13 +5,13 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent.parent
 DATA_DIR = BASE_DIR / 'data'
 
-BASE_MODEL = 'mistralai/Mistral-7B-v0.1'
+BASE_MODEL = 'bigscience/bloom-1b7'
 DEVICE = 'cuda'
 
 # Trainer Arguments
-LR = 2e-4
+LR = 1e-3
 EPOCHS = 3
-BATCH_SIZE = 1
+BATCH_SIZE = 12
 WARMUP_STEPS = 2
 GRAD_ACC_STEPS = 4
 SAVE_DIR = BASE_DIR / 'model'

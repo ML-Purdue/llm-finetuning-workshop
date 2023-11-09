@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
-import torch
-from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from src import const
+import torch
 
 
 def get_model():
@@ -19,7 +20,7 @@ def get_model():
             trust_remote_code=True,
             device_map={'': 0})
     model.gradient_checkpointing_enable()
-    model = prepare_model_for_kbit_training(model)
+    if const.DEVICE = 'gpu': model = prepare_model_for_kbit_training(model)
 
     lora = LoraConfig(
             r=8,

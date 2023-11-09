@@ -8,8 +8,8 @@ import json
 class MARCO(Dataset):
     def __init__(self, directory, split, tokenizer):
         self.data = []
-        data = json.load(open(f'{directory}/law.{split}.json'))['data']
-        for paragraph in data['data']:
+        data = json.load(open(f'{directory}/squad.law.{split}.json'))['data']
+        for paragraph in data:
             for sample in paragraph['paragraphs']:
                 context = sample['context']
                 for question in sample['qas']:
