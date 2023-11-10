@@ -20,7 +20,7 @@ def get_model():
             trust_remote_code=True,
             device_map={'': 0})
     model.gradient_checkpointing_enable()
-    if const.DEVICE = 'gpu': model = prepare_model_for_kbit_training(model)
+    model = prepare_model_for_kbit_training(model)
 
     lora = LoraConfig(
             r=8,
