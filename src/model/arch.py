@@ -20,7 +20,7 @@ def get_model():
             trust_remote_code=True,
             device_map={'': 0})
     model.gradient_checkpointing_enable()
-    model = prepare_model_for_kbit_training(model)
+    if const.DEVICE == 'cuda': model = prepare_model_for_kbit_training(model)
 
     lora = LoraConfig(
             r=8,
@@ -31,4 +31,3 @@ def get_model():
             task_type='CAUSAL_LM')
 
     return tokenizer, get_peft_model(model, lora)
-

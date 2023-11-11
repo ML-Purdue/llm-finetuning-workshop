@@ -14,8 +14,8 @@ class MARCO(Dataset):
                 context = sample['context']
                 for question in sample['qas']:
                     for answer in question['answers']:
-                        self.data.append({'context': context, 
-                                          'question': question['question'], 
+                        self.data.append({'context': context,
+                                          'question': question['question'],
                                           'answer': answer['text']})
 
         self.tokenizer = tokenizer

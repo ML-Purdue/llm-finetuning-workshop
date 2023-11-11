@@ -16,7 +16,6 @@ WARMUP_STEPS = 2
 GRAD_ACC_STEPS = 4
 SAVE_DIR = BASE_DIR / 'model'
 OPTIMIZER = 'paged_adamw_8bit'
-CHECKPOINT = SAVE_DIR / 'checkpoint-19500'
 
 # LoRA Config
 TARGET_MODULES = ['query_key_value']
